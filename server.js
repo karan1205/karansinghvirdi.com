@@ -10,5 +10,5 @@ app.get('*', (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log(`App is up on ${PORT}`);
+    console.log(`App is up on ${process.env.PORT || PORT}`);
 });
