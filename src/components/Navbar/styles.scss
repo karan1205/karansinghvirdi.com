@@ -1,0 +1,50 @@
+$navbar_height: 70px;
+
+.navbar {
+    box-shadow: 0 0 15px 0 RGB(0 0 0 / 10%);
+    text-align: center;
+    position: sticky;
+    top: 0;
+    min-height: $navbar_height;
+    z-index: 1000;
+    background: white;
+    .list {
+        display: flex;
+        justify-content: center;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        .item {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-weight: 500;
+            font-size: 14px;
+            min-height: $navbar_height;
+            cursor: pointer;
+            min-width: 80px;
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
+            img {
+                width: 24px;
+                display: block;
+                margin: 0 auto;
+            }
+            .active {
+                span {
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        bottom: 0;
+                        width: 100%;
+                        border: 1px solid black;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,41 @@
+@import 'scss/mixins.scss';
+@import 'scss/variables.scss';
+
+.social {
+    width: 100%;
+    background: $white;
+    bottom: 0;
+    padding: 8px;
+    position: fixed;
+
+    @include for-desktop {
+        width: auto;
+        top: 50%;
+        right: 0;
+        bottom: initial;
+        transform: translateY(-50%);
+    }
+
+    .list {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        @include for-desktop {
+            flex-direction: column;
+        }
+        .item {
+            min-width: 53px;
+            @include for-desktop {
+                min-height: 28px;
+            }
+            img {
+                width: 20px;
+                height: 20px;
+                margin: 0 auto;
+                display: block;
+            }
+        }
+    }
+}

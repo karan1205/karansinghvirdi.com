@@ -40,8 +40,9 @@ export default {
     ],
     resolve: {
         alias: {
-
+            images: path.resolve(__dirname, '../src/images'),
+            scss: path.resolve(__dirname, '../src/scss'),
         },
-        extensions: ['.js', '.jsx']
+        extensions: ['.js', '.jsx', '.scss']
     }
 }
