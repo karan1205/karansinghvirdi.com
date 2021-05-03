@@ -5,9 +5,11 @@
   "main": "index.js",
   "scripts": {
     "start:dev": "webpack serve --config config/webpack.dev.babel.js",
-    "start": "npx webpack --config config/webpack.prod.babel.js && node server.js",
+    "start": "node server.js",
+    "build": "npx webpack --config config/webpack.prod.babel.js",
     "analyze": "npx webpack --config config/webpack.analyze.babel.js",
-    "heroku-prebuild": "npm install --dev"
+    "heroku-prebuild": "npm install --dev",
+    "postinstall": "npm run build"
   },
   "keywords": [],
   "author": "Karan Singh <karan1205singh@gmail.com>",
