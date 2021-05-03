@@ -6,7 +6,8 @@
   "scripts": {
     "start": "webpack serve --config config/webpack.dev.babel.js",
     "build": "npx webpack --config config/webpack.prod.babel.js",
-    "analyze": "npx webpack --config config/webpack.analyze.babel.js"
+    "analyze": "npx webpack --config config/webpack.analyze.babel.js",
+    "heroku-prebuild": "npm install --dev"
   },
   "keywords": [],
   "author": "Karan Singh <karan1205singh@gmail.com>",
