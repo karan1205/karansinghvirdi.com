@@ -4,12 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start:dev": "webpack serve --config config/webpack.dev.babel.js",
-    "start": "node server.js",
+    "start": "webpack serve --config config/webpack.dev.babel.js",
     "build": "npx webpack --config config/webpack.prod.babel.js",
-    "analyze": "npx webpack --config config/webpack.analyze.babel.js",
-    "heroku-prebuild": "npm install --dev",
-    "postinstall": "npm run build"
+    "analyze": "npx webpack --config config/webpack.analyze.babel.js"
   },
   "keywords": [],
   "author": "Karan Singh <karan1205singh@gmail.com>",
