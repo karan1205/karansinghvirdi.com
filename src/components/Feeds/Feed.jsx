@@ -23,11 +23,11 @@ const Feed = (feed) => {
         return null;
     }
 
-    const {guid, title, date, imgSrc} = feedData;
+    const {link, title, date, imgSrc} = feedData;
 
     return (
         <div className="feed">
-            <a href={guid}>
+            <a href={link} target="_blank">
                 <h1 className="title">{title}</h1>
                 {imgSrc && <img className="image" src={imgSrc} alt={imgSrc} />}
                 <div className="footer">
