@@ -1,5 +1,6 @@
 import React from 'react';
 import Masonry from '../../components/Masonry';
+import {shuffleArray} from "../../utils";
 import './styles.scss';
 
 const imgs = [
@@ -27,7 +28,7 @@ const Travel = () => {
     return (
         <div className="travel">
             <section className="images">
-                <Masonry imgSources={imgs} />
+                <Masonry imgSources={shuffleArray(imgs)} />
             </section>
         </div>
     );
