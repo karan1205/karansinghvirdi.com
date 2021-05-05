@@ -8,9 +8,7 @@
   .image {
     display: block;
     margin: 8px auto;
-    img {
-      width: 100%;
-    }
+    width: 100%;
   }
   &:not(:last-child){
     border-bottom: 1px solid $gray;
