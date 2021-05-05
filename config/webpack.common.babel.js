@@ -2,6 +2,7 @@ import path from 'path';
 import ESLintPlugin from 'eslint-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import PurgeCSSPlugin from 'purgecss-webpack-plugin';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
 import glob from 'glob';
 
 export default {
@@ -36,6 +37,14 @@ export default {
         }),
         new PurgeCSSPlugin({
             paths: glob.sync(path.join(__dirname, '../src/**/*'), {nodir: true})
+        }),
+        new CopyWebpackPlugin({
+            patterns: [
+                {
+                    from: path.resolve(__dirname, '../_redirects'),
+                    to: path.resolve(__dirname, '../dist/')
+                }
+            ]
         })
     ],
     resolve: {
