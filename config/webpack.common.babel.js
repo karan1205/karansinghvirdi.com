@@ -3,6 +3,7 @@ import ESLintPlugin from 'eslint-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import PurgeCSSPlugin from 'purgecss-webpack-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
+import NodePolyfillPlugin from 'node-polyfill-webpack-plugin';
 import glob from 'glob';
 
 export default {
@@ -45,7 +46,8 @@ export default {
                     to: path.resolve(__dirname, '../dist/')
                 }
             ]
-        })
+        }),
+        new NodePolyfillPlugin()
     ],
     resolve: {
         alias: {

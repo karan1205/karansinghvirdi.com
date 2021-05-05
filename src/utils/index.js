@@ -1,3 +1,5 @@
+import {MONTHS} from "../constants";
+
 export function shuffleArray(arr) {
     let currentIndex = arr.length, randomIndex;
     // While there remain elements to shuffle...
@@ -9,4 +11,9 @@ export function shuffleArray(arr) {
         [arr[randomIndex], arr[currentIndex]] = [arr[currentIndex], arr[randomIndex]];
     }
     return arr;
+}
+
+export function getDate(dateString) {
+    const date = new Date(dateString);
+    return `${date.getDate()} ${MONTHS[date.getMonth()]}, ${date.getFullYear()}`;
 }

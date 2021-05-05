@@ -1,0 +1,16 @@
+@import 'scss/variables';
+
+.feed {
+  .image {
+    display: block;
+    margin: 8px auto;
+  }
+  &:not(:last-child){
+    border-bottom: 1px solid $gray;
+  }
+  .footer {
+    display: flex;
+    color: $gray;
+    justify-content: space-between;
+  }
+}
