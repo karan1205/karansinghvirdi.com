@@ -9,6 +9,7 @@
     position: fixed;
 
     @include for-desktop {
+        padding: 6px;
         width: auto;
         top: 50%;
         right: 0;
