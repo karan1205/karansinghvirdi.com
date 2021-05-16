@@ -4,6 +4,7 @@ import './styles.scss';
 
 const Tech = () => {
     const [feeds, setFeeds] = useState(null);
+    const [loading, setLoading] = useState(true);
     useEffect(() => {
         fetch('https://karansinghvirdi.netlify.app/.netlify/functions/server/tech-feed')
             .then(res => res.json())
@@ -11,12 +12,13 @@ const Tech = () => {
                 const {data: {feeds}} = res;
                 setFeeds(feeds);
             })
-            .catch(e => {
-                console.log('Error: ', e.message);
+            .catch(() => {
                 setFeeds(null);
+            }).finally(() => {
+                setLoading(false);
             })
     }, []);
-    if(!feeds) {
+    if(!feeds && !loading) {
         return 'No Data';
     }
     return (
