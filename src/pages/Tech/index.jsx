@@ -8,7 +8,7 @@ const Tech = () => {
         fetch('https://karansinghvirdi.netlify.app/.netlify/functions/server/tech-feed')
             .then(res => res.json())
             .then(res => {
-                const {data: feeds} = res;
+                const {data: {feeds}} = res;
                 setFeeds(feeds);
             })
             .catch(e => {
