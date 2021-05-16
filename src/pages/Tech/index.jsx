@@ -1,18 +1,20 @@
 import React, {useEffect, useState} from 'react';
 import Feeds from '../../components/Feeds';
-import Parser from 'rss-parser';
 import './styles.scss';
-
-const parser = new Parser();
 
 const Tech = () => {
     const [feeds, setFeeds] = useState(null);
     useEffect(() => {
-        (async () => {
-            const feed = await parser.parseURL('https://cors-anywhere.herokuapp.com/https://medium.com/feed/@karansinghvirdi');
-            setFeeds(feed);
-        })();
-        fetch('https://karansinghvirdi.netlify.app/.netlify/functions/server/another').then(res => res.json()).then(res => console.log(res, '---------res---'))
+        fetch('https://karansinghvirdi.netlify.app/.netlify/functions/server/tech-feed')
+            .then(res => res.json())
+            .then(res => {
+                const {data: feeds} = res;
+                setFeeds(feeds);
+            })
+            .catch(e => {
+                console.log('Error: ', e.message);
+                setFeeds(null);
+            })
     }, []);
     if(!feeds) {
         return 'No Data';
