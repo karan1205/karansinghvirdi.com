@@ -21,6 +21,9 @@ const Tech = () => {
     if(!feeds && !loading) {
         return 'No Data';
     }
+    if(loading) {
+        return 'Loading...';
+    }
     return (
         <div className="tech">
             <section className="posts">
