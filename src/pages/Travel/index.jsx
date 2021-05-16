@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import Masonry from '../../components/Masonry';
 import {shuffleArray} from "../../utils";
 import './styles.scss';
@@ -23,10 +23,22 @@ const imgs = [
 ];
 
 const Travel = () => {
+    const [images, setImages] = useState(null);
+    useEffect(() => {
+        fetch('https://karansinghvirdi.netlify.app/.netlify/functions/server/travel')
+            .then(res => res.json())
+            .then(res => {
+                const {data} = res;
+                setImages(data);
+            })
+            .catch(e => {
+                setImages(null);
+            })
+    }, []);
     return (
         <div className="travel">
             <section className="images">
-                <Masonry imgSources={shuffleArray(imgs)} />
+                <Masonry imgSources={shuffleArray(images || [])} />
             </section>
         </div>
     );
