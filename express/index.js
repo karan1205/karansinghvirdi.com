@@ -2,7 +2,7 @@ const express = require('express');
 const serverless = require('serverless-http');
 const bodyParser = require('body-parser');
 
-const PORT = 3000;
+// const PORT = 3000;
 
 const app = express();
 app.use(bodyParser.json());
@@ -14,8 +14,8 @@ router.get('/', (req, res) => {
     res.end();
 });
 
-app.listen(PORT, () => {
-    console.log(`App is up on ${process.env.PORT || PORT}`);
-});
+// app.listen(PORT, () => {
+//     console.log(`App is up on ${process.env.PORT || PORT}`);
+// });
 
 module.exports.handler = serverless(app);
