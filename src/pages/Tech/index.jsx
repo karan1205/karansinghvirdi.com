@@ -12,7 +12,7 @@ const Tech = () => {
             const feed = await parser.parseURL('https://cors-anywhere.herokuapp.com/https://medium.com/feed/@karansinghvirdi');
             setFeeds(feed);
         })();
-        fetch('https://karansinghvirdi.netlify.app/api/another').then(res => res.json()).then(res => console.log(res, '---------res---'))
+        fetch('https://karansinghvirdi.netlify.app/.netlify/functions/server/another').then(res => res.json()).then(res => console.log(res, '---------res---'))
     }, []);
     if(!feeds) {
         return 'No Data';
