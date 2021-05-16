@@ -8,7 +8,7 @@ const app = express();
 app.use(bodyParser.json());
 
 const router = express.Router();
-router.get('/', (req, res) => {
+router.get('/api-travel', (req, res) => {
     res.writeHead(200, { 'Content-Type': 'text/html' });
     res.write('<h1>Hello from Express.js!</h1>');
     res.end();
