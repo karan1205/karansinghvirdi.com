@@ -52,7 +52,7 @@
   },
   "proxy": {
     "/api": {
-      "target": "karansinghvirdi.netlify.app",
+      "target": "https://karansinghvirdi.netlify.app",
       "pathRewrite": {
         "^/\\api": "/.netlify/functions"
       }
