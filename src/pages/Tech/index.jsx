@@ -12,6 +12,7 @@ const Tech = () => {
             const feed = await parser.parseURL('https://cors-anywhere.herokuapp.com/https://medium.com/feed/@karansinghvirdi');
             setFeeds(feed);
         })();
+        fetch('/api/another').then(res => res.json()).then(res => console.log(res, '---------res---'))
     }, []);
     if(!feeds) {
         return 'No Data';
