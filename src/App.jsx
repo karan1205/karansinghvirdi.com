@@ -13,14 +13,16 @@ const App = () => {
         <Fragment>
             <Navbar />
             <SocialBar />
-            <Suspense fallback="loading">
-                <Switch>
-                    <Route exact path="/" render={() => <Home/>}/>
-                    <Route exact path="/travel" render={() => <Travel/>}/>
-                    <Route exact path="/tech" render={() => <Tech/>}/>
-                    <Route path="*" render={() => "Not Found"}/>
-                </Switch>
-            </Suspense>
+            <main className="main">
+                <Suspense fallback="loading">
+                    <Switch>
+                        <Route exact path="/" render={() => <Home/>}/>
+                        <Route exact path="/travel" render={() => <Travel/>}/>
+                        <Route exact path="/tech" render={() => <Tech/>}/>
+                        <Route path="*" render={() => "Not Found"}/>
+                    </Switch>
+                </Suspense>
+            </main>
         </Fragment>
     )
 };
