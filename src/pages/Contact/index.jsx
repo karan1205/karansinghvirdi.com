@@ -3,8 +3,8 @@ import './index.scss';
 
 const regex = {
     email: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-    name: /^[A-Za-z]+$/,
-    message: /^[A-Za-z1-9!@#&*-_]+$/
+    name: /^[A-Za-z\s]+$/,
+    message: /^[A-Za-z1-9!@#&*-_\s]+$/
 };
 
 const Contact = () => {
@@ -41,7 +41,7 @@ const Contact = () => {
         }), {});
         setErrors(errorData);
         const values = Object.values(errors);
-        if(values.filter(Boolean).length === values.length) {
+        if(!values.filter(Boolean).length) {
             fetch('https://karansinghvirdi.netlify.app/.netlify/functions/server/send-mail', {
                 params: input
             })
