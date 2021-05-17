@@ -56,6 +56,13 @@ const Contact = () => {
                 .catch((e) => {
                     console.log(e, 'Error');
                 })
+                .finally(() => {
+                    setInput({
+                        name: '',
+                        email: '',
+                        message: ''
+                    });
+                })
         }
     }
     const onInputBlur = (e) => {
