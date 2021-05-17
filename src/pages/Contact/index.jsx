@@ -43,14 +43,15 @@ const Contact = () => {
         const values = Object.values(errors);
         if(!values.filter(Boolean).length) {
             fetch('https://karansinghvirdi.netlify.app/.netlify/functions/server/send-mail', {
+                method: 'POST',
                 body: JSON.stringify(input)
             })
                 .then(res => res.json())
                 .then(res => {
                     console.log('Success');
                 })
-                .catch(() => {
-                    console.log('Error');
+                .catch((e) => {
+                    console.log(e, 'Error');
                 })
         }
     }
