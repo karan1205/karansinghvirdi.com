@@ -44,7 +44,10 @@ const Contact = () => {
         if(!values.filter(Boolean).length) {
             fetch('https://karansinghvirdi.netlify.app/.netlify/functions/server/send-mail', {
                 method: 'POST',
-                body: JSON.stringify(input)
+                body: JSON.stringify(input),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
             })
                 .then(res => res.json())
                 .then(res => {
