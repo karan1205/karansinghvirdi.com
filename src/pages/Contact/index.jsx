@@ -43,7 +43,7 @@ const Contact = () => {
         const values = Object.values(errors);
         if(!values.filter(Boolean).length) {
             fetch('https://karansinghvirdi.netlify.app/.netlify/functions/server/send-mail', {
-                params: input
+                body: JSON.stringify(input)
             })
                 .then(res => res.json())
                 .then(res => {
