@@ -26,12 +26,6 @@ const App = () => {
                     </Switch>
                 </Suspense>
             </main>
-            <VideoPlayer id="knkdsnfndksfds"
-                          srcUrl="https://media-gsam.akamaized.net/library/Delivery/45/0e/450e36ed-ca4c-4881-abe2-ad0d09f98a36/master.m3u8"
-                         width="852"
-                         height="526"
-                         stretching="responsive"
-            />
             <VideoPlayer id="knkdsnfvvsvsdndksfds"
                           srcUrl="https://multiplatform-f.akamaihd.net/i/multi/will/bunny/big_buck_bunny_,640x360_400,640x360_700,640x360_1000,950x540_1500,.f4v.csmil/master.m3u8"
                          width="852"
