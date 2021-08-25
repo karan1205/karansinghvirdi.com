@@ -3,6 +3,7 @@ import {Switch, Route} from 'react-router-dom';
 import Navbar from './components/Navbar';
 import SocialBar from './components/Socialbar';
 import './scss/styles.scss';
+import {VideoPlayer} from "./components/VideoPlayer";
 
 const Home = lazy(() => import(/* webpackChunkName: 'Home' */'./pages/Home'));
 const Travel = lazy(() => import(/* webpackChunkName: 'Travel' */'./pages/Travel'));
@@ -25,6 +26,12 @@ const App = () => {
                     </Switch>
                 </Suspense>
             </main>
+            <VideoPlayer id="knkdsnfndksfds"
+                          srcUrl="https://media-gsam.akamaized.net/library/Delivery/45/0e/450e36ed-ca4c-4881-abe2-ad0d09f98a36/master.m3u8"
+                         width="852"
+                         height="526"
+                         stretching="responsive"
+            />
         </Fragment>
     )
 };
